@@ -11,20 +11,21 @@
     <script src="//rawgithub.com/akottr/dragtable/master/jquery.dragtable.js"></script>
     <script>
         function changeTableHeaderWidth(colNo, width) {
-            // Nur das th der passenden Spalte auslesen
+            // Nur die passende Spalte auslesen | Read only the current column
             let currentCol = $("th").toArray()[colNo];
 
             // Spalten-Element zum jQuery-Object machen und mit width() die Breite verändern
+            // Make column element to jQuery object and change width 
             $(currentCol).width(width);
         }
 
-        // Dummy Breiten setzen
+        // Dummy Breiten setzen | Add dummy widths
         const WIDTH_ARRAY = [200, 500, 400, 1000];
 
         $(document).ready(function () {
             $('#table').dragtable();
 
-            // Iteriert über alle Tabellen-Zellen
+            // Iteriert über alle Tabellen-Zellen | Iterate over all table cells
             $("td").each(function (index) {
                 let colNo = index % 4;
                 let newWidth = WIDTH_ARRAY[colNo];
