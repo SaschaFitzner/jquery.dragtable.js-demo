@@ -1,0 +1,14 @@
+{
+  "name": "dragtable",
+  "version": "1.0.0",
+  "description": "",
+  "main": "jquery.dragtable.js",
+  "scripts": {
+    "start": "ws"
+  },
+  "author": "Sascha Fitzner",
+  "license": "MIT",
+  "devDependencies": {
+    "local-web-server": "^4.2.1"
+  }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DragTable-Demo</title>
+    <link rel="stylesheet" type="text/css" href="//rawgithub.com/akottr/dragtable/master/dragtable.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <script src="//rawgithub.com/akottr/dragtable/master/jquery.dragtable.js"></script>
+    <script>
+        function changeTableHeaderWidth(colNo, width) {
+            // Nur das th der passenden Spalte auslesen
+            let currentCol = $("th").toArray()[colNo];
+
+            // Spalten-Element zum jQuery-Object machen und mit width() die Breite verändern
+            $(currentCol).width(width);
+        }
+
+        // Dummy Breiten setzen
+        const WIDTH_ARRAY = [200, 500, 400, 1000];
+
+        $(document).ready(function () {
+            $('#table').dragtable();
+
+            // Iteriert über alle Tabellen-Zellen
+            $("td").each(function (index) {
+                let colNo = index % 4;
+                let newWidth = WIDTH_ARRAY[colNo];
+                changeTableHeaderWidth(colNo, newWidth);
+            });
+        });
+    </script>
+    <style>
+        td {
+            width: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="table">
+        <thead>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
