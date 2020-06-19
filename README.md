@@ -1,4 +1,9 @@
-# DragTable - Demo
+# jQuery - DragTable - Demo
+
+## Sources
+
+- [jQuery](https://jquery.com/)
+- [jQuery DragTable](https://akottr.github.io/dragtable/)
 
 ## Install dependencies
 
